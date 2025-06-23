@@ -1,0 +1,26 @@
+{
+	"name": "cypress-basics",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview",
+		"cypress:open": "npx cypress open",
+		"cypress:run": "npx cypress run",
+		"test:e2e": "start-server-and-test dev http://localhost:5173 cypress:open"
+	},
+	"dependencies": {
+		"cypress": "^14.5.0",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0"
+	},
+	"devDependencies": {
+		"@types/react": "^19.1.8",
+		"@types/react-dom": "^19.1.6",
+		"@vitejs/plugin-react": "^4.6.0",
+		"start-server-and-test": "^2.0.12",
+		"vite": "^6.3.5"
+	}
+}
