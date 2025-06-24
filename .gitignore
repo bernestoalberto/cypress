@@ -3,3 +3,7 @@ dist/
 package-lock.json
 .DS_Store
 .env    
+.cache/
+.vscode/
+*.map
+*.pdf

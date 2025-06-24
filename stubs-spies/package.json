@@ -1,5 +1,5 @@
 {
-	"name": "cypress-adv",
+	"name": "cypress-stubs",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
@@ -11,17 +11,11 @@
 		"cypress:run": "npx cypress run",
 		"test:e2e": "start-server-and-test dev http://localhost:5173 cypress:open"
 	},
-	"dependencies": {
-		"cypress": "^14.5.0",
-		"react": "^19.1.0",
-		"react-dom": "^19.1.0",
-		"react-router-dom": "^7.6.2"
-	},
 	"devDependencies": {
-		"@types/react": "^19.1.8",
-		"@types/react-dom": "^19.1.6",
-		"@vitejs/plugin-react": "^4.6.0",
-		"start-server-and-test": "^2.0.12",
-		"vite": "^6.3.5"
+		"vite": "^7.0.0",
+		"start-server-and-test": "^2.0.12"
+	},
+	"dependencies": {
+		"cypress": "^14.5.0"
 	}
 }

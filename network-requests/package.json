@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "init": "npm install && dotenv -e .env npx prisma db push && node prisma/seed.js",
+    "build": "npm run build:css && remix build",
+    "build:css": "tailwindcss -m -i ./styles/tailwind.css -o app/styles/tailwind.css",
+    "dev": "concurrently \"npm run dev:css\" \"dotenv -e .env remix dev\"",
+    "dev:css": "tailwindcss -w -i ./styles/tailwind.css -o app/styles/tailwind.css",
+    "start": "remix-serve build",
+    "typecheck": "tsc",
+    "test": "dotenv -e .env.test npx prisma db push && concurrently \"npm run dev:css\" \"dotenv -e .env.test remix dev\" \"dotenv -e .env.test cypress run\"",
+    "test:open": "dotenv -e .env.test npx prisma db push && concurrently \"npm run dev:css\" \"dotenv -e .env.test remix dev\" \"dotenv -e .env.test cypress open\""
+  },
+  "dependencies": {
+    "@prisma/client": "^6.10.1",
+    "@remix-run/node": "^2.16.8",
+    "@remix-run/react": "^2.16.8",
+    "@remix-run/serve": "^2.16.8",
+    "bcryptjs": "^3.0.2",
+    "dotenv-cli": "^8.0.0",
+    "isbot": "^5.1.28",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^2.16.8",
+    "@remix-run/eslint-config": "^2.16.8",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "concurrently": "^9.2.0",
+    "cypress": "^14.5.0",
+    "eslint": "^9.29.0",
+    "eslint-plugin-cypress": "^5.1.0",
+    "prisma": "^6.10.1",
+    "tailwindcss": "^4.1.10",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
